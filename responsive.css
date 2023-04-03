@@ -1,0 +1,148 @@
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) { 
+    body{
+        height: 150vh;
+    }
+    .nav {
+        display: none
+    }   
+    .video-player video {
+    
+     height: 600px;
+} 
+    .play-button{
+        position: absolute;
+        top: 516px;
+        left: 5px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        border-radius: 5px;
+        border: 0;
+        font-size: 1.5rem;
+        font-weight: 500;
+        padding: 3px 20px 3px 10px;
+        background-color: rgb(31, 30, 30);
+        color: var(--color-white);
+    }
+    .img-bg{
+        width: 100%;
+        height: 600px;
+        background-image: url(img-video/bg-mobile.png);
+        background-position:center;       
+ }
+ #secundary{
+    display: none;
+ }
+ .card{
+    width: 350px;
+    height: 250px;
+    border: 0;
+    position: relative;
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+ #container-carousel{
+    display: block;
+    margin-left: 10px;
+ }
+ .video-player2 video {
+    width: fit-content;
+    height: 400px;
+  }
+}
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) { 
+    body{
+        height: max-content;
+    }
+    .nav {
+        display: none
+    }    
+    .play-button{
+        position: absolute;
+        top: 296px;
+        left: 47px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        border-radius: 5px;
+        border: 0;
+        font-size: 1.5rem;
+        font-weight: 500;
+        padding: 3px 15px 3px 10px;
+        background-color: rgb(31, 30, 30);
+        color: var(--color-white);
+    }
+    .img-bg{
+        width: 100%;
+        height: 500px;
+        background-image: url(img-video/ezgif.com-gif-maker\ \(7\).gif);
+        background-size: cover;
+
+    }
+    .card-item {
+        margin-right: 0px;
+        margin-bottom: 20px;
+      }
+    .card{
+        width: 500px;
+        height: 500px;
+        background-color: red;
+        position: relative;
+        transform: scale(1);
+        transition: transform 0.3s ease;
+        border: none;
+    }
+    #secundary{
+        margin: 20px;
+        height: max-content;
+      }
+    .card-container {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+      }
+      .card{
+        width: 100%;
+        height: 270px;
+        background-color: red;
+        position: relative;
+        transform: scale(1);
+        transition: transform 0.3s ease;
+    }
+ }
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) { 
+
+ }
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+    #secundary{
+        display: none;
+     }
+    .img-bg{
+        width: 100%;
+        height: 700px;
+        background-image: url(img-video/ezgif.com-gif-maker\ \(7\).gif);
+        background-size: cover;
+        background-position: left center;
+
+    }
+    #container-carousel{
+        display: block;
+        margin-left: 10px;
+     }
+ }
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1350px) and (max-width: 1550px) { 
+    .card{
+        width: 330px;
+        height: 225px;
+        background-color: red;
+        position: relative;
+        transform: scale(1);
+        transition: transform 0.3s ease;
+        border: none;
+    }
+ }

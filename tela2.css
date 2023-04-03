@@ -1,0 +1,248 @@
+
+/* variaveis */
+:root{
+    --background: #141414;
+    --color-white: #FEFEFE;
+    --color-grey: #737373;
+    --color-grey2: #3D3D3D;
+}
+
+/* css reset */
+body,main,ul,li,head,header,h1,h2,h3,h4,p,a,span,div{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+body{
+    background-color: var(--background);
+    height: 300vh;
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    transition: background-color 0.5s ease-in-out;
+    z-index: 9999;
+  }
+header img{
+    width: 100px;
+}
+.nav {
+    display: flex;
+    align-items: center;
+    padding: 20px 50px;
+}
+.nav img{
+    width: 100px;
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+nav li {
+    display: inline-block;
+    position: relative;
+  }
+nav .dropdown{
+    margin-left: 350px ;
+  }
+  
+nav li a {
+    display: block;
+    padding: 10px 20px;
+    color: var(--color-white);
+    text-decoration: none;
+  }
+  
+nav .dropdown-menu {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 0;
+    background-color: #3e393976;
+  }
+  
+nav .dropdown-menu.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  nav .dropdown > a > span {
+    display: inline-block;
+    padding-right: 10px;
+  }
+nav .dropdown-menu li {
+    display: block;  
+}
+  
+nav .dropdown-menu li a {
+    display: block;
+    padding: 10px 30px; 
+    color: whitesmoke;
+    text-decoration: none;
+    width: max-content;
+   
+  }
+  .mdi{
+    display: flex;
+    flex-direction: row-reverse;
+  }
+.img-bg{
+    width: 100%;
+    height: 800px;
+    background-image: url(img-video/ezgif.com-gif-maker\ \(7\).gif);
+    background-size: cover;
+    background-position: inherit;
+}
+.video-player {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  display: none;
+}
+.video-player video {
+  width: max-content;
+  height: 600px;
+}
+.play-button{
+    position: absolute;
+    top: 600px;
+    left: 105px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    border: 0;
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 3px 2rem 3px 1.1rem;
+    background-color: rgb(31, 30, 30);
+    color: var(--color-white);
+}
+.play-button:hover{
+    background-color: rgba(31, 30, 30, 0.658);
+}
+.play-button span{
+   margin-right: 5px;
+   font-size: 3rem;
+
+}
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 2rem;
+}
+/* cards */
+.row-card{
+  margin: 50px;
+} 
+
+.video-player2 {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  display: none;
+}
+.video-player2 video {
+  width: max-content;
+  height: 600px;
+}
+.card{
+    width: 450px;
+    height: 235px;
+    position: relative;
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+.card:hover{
+    transform: scale(1.04);
+} 
+
+.close-button2 {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 2rem;
+  z-index: 9999;
+}
+.card-container {
+  display: flex;
+  justify-content: space-around;
+}
+.card-item {
+  margin-right: 10px;
+}
+#secundary{
+  margin: 130px 0px 0px 20px;
+  height: max-content;
+}
+#secundary h2 , #container-carousel h2{
+  color: white;
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+.item1{
+  background-image: url(img-video/se\ for\ preciso-capa.png);
+  background-size: cover;
+}
+.item2{
+  background-image: url(img-video/violinha-capa.png);
+  background-size: cover;
+}
+.item3{
+  background-image: url(img-video/sorriremos-capa.png);
+  background-size: cover;
+}
+.item4{
+  background-image: url(img-video/aqueles\ olhos-capa.jpg);
+  background-size: cover;
+}
+/* carousel mobile */
+.carousel{
+  display: grid;
+  grid-auto-flow: column;
+  scroll-behavior: auto;
+  gap: 20px;
+  overflow-y: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type:  x mandatory;
+  scrollbar-width: none;
+  width: 100%;
+  margin: 0px auto;
+}
+#container-carousel{
+  display: none;
+  margin-top: 130px;
+}
+
+
+  
+  
+  
+
+  
+
+
+
+

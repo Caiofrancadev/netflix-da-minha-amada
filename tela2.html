@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.1.96/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="tela2.css">
+    <link rel="stylesheet" href="responsive.css">
+    <title>O nosso amor!</title>
+</head>
+<body>
+    <header>
+        <div class="nav">
+            <a
+             href="#"><img src="img-video/logo netflix.png" alt="Logo Netflix">
+            </a>
+            <nav>
+              <ul>
+                <li class="dropdown">
+                  <a class="mdi mdi-chevron-down" href="#">Navegar
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#primary">Inicio</a></li>
+                    <li><a  onclick="scrollToDiv()" href="#secundary">Nossos filmes</a></li>
+                    <li><a href="#">Item 3</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+            
+        </div>
+    </header>
+    <main>
+      <div id="primary">
+        <div class="img-bg"></div>
+        <button class="play-button"><span class="mdi mdi-play"></span>Assistir</button>
+        <div class="video-player">
+          <video controls>
+            <source src="img-video/video-main.mp4" type="video/mp4">
+          </video>
+          <div class="close-button">X</div>
+        </div>
+      </div>
+
+        <div id="secundary">
+          <h2>Nossos filmes</h2>
+          <div class="card-container">
+            <div class="card-item">
+              <button class="card item1"></button>
+              <div class="video-player2">
+                  <video controls>
+                      <source src="img-video/se for preciso eu.mp4" type="video/mp4">
+                  </video>
+                  <div class="close-button2">X</div>
+              </div>
+            </div>
+            <div class="card-item">
+              <button class="card item2"></button>
+              <div class="video-player2">
+                  <video controls>
+                      <source src="img-video/violinha.mp4" type="video/mp4">
+                  </video>
+                  <div class="close-button2">X</div>
+              </div>
+            </div>
+            
+            <div class="card-item">
+              <button class="card item3"></button>
+              <div class="video-player2">
+                  <video controls>
+                      <source src="img-video/sorriremos quando acordar.mp4" type="video/mp4">
+                  </video>
+                  <div class="close-button2">X</div>
+              </div>
+            </div>
+            <div class="card-item">
+              <button class="card item4"></button>
+              <div class="video-player2">
+                  <video controls>
+                      <source src="img-video/aqueles olhos.mp4">
+                  </video>
+                  <div class="close-button2">X</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- carousel mobile -->
+        
+          <div id="container-carousel">
+            <h2>Nossos filmes</h2>
+            <div class="carousel">
+            <div class="card-container">
+              <div class="card-item">
+                <button class="card item1"></button>
+                <div class="video-player2">
+                    <video controls>
+                        <source src="img-video/se for preciso eu.mp4" type="video/mp4">
+                    </video>
+                    <div class="close-button2">X</div>
+                </div>
+              </div>
+              <div class="card-item">
+                <button class="card item2"></button>
+                <div class="video-player2">
+                    <video controls>
+                        <source src="img-video/violinha.mp4" type="video/mp4">
+                    </video>
+                    <div class="close-button2">X</div>
+                </div>
+              </div>
+            
+              <div class="card-item">
+                <button class="card item3"></button>
+                <div class="video-player2">
+                    <video controls>
+                        <source src="img-video/sorriremos quando acordar.mp4" type="video/mp4">
+                    </video>
+                    <div class="close-button2">X</div>
+                </div>
+              </div>
+              <div class="card-item">
+                <button class="card item4"></button>
+                <div class="video-player2">
+                    <video controls>
+                        <source src="img-video/aqueles olhos.mp4">
+                    </video>
+                    <div class="close-button2">X</div>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+    </main>
+ 
+</body>
+<script>
+  // header
+    var header = document.querySelector('header');
+
+window.addEventListener('scroll', function() {
+  if (window.pageYOffset > 0) {
+    header.style.backgroundColor = '#141414'; // adicione a cor desejada aqui
+  } else {
+    header.style.backgroundColor = 'transparent';
+  }
+});
+
+// Video player home
+
+const playButton = document.querySelector(".play-button");
+const videoPlayer = document.querySelector(".video-player");
+const closeButton = document.querySelector(".close-button");
+const video = videoPlayer.querySelector("video");
+
+playButton.addEventListener("click", function() {
+  videoPlayer.style.display = "block";
+  video.play();
+
+  if (video.requestFullscreen && window.innerWidth < 768 && window.orientation === 90) {
+    video.requestFullscreen();
+  } else if (video.webkitRequestFullscreen && window.innerWidth < 768 && window.orientation === 90) {
+    video.webkitRequestFullscreen();
+  } else if (video.msRequestFullscreen && window.innerWidth < 768 && window.orientation === 90) {
+    video.msRequestFullscreen();
+  }
+});
+
+playButton.addEventListener("touchstart", function() {
+  videoPlayer.style.display = "block";
+  video.play();
+
+  if (video.requestFullscreen && window.innerWidth < 768 && window.orientation === 90) {
+    video.requestFullscreen();
+  } else if (video.webkitRequestFullscreen && window.innerWidth < 768 && window.orientation === 90) {
+    video.webkitRequestFullscreen();
+  } else if (video.msRequestFullscreen && window.innerWidth < 768 && window.orientation === 90) {
+    video.msRequestFullscreen();
+  }
+});
+
+closeButton.addEventListener("click", function() {
+  videoPlayer.style.display = "none";
+  video.pause();
+  video.currentTime = 0;
+});
+
+ 
+    // menu drop 
+      const dropdowns = document.querySelectorAll('.dropdown');
+
+dropdowns.forEach(dropdown => {
+  const trigger = dropdown.querySelector('a');
+  const menu = dropdown.querySelector('.dropdown-menu');
+
+  trigger.addEventListener('click', (event) => {
+    event.preventDefault();
+    menu.classList.toggle('active');
+  });
+
+  document.addEventListener('click', (event) => {
+    if (event.target !== trigger && event.target !== menu && menu.classList.contains('active')) {
+      menu.classList.remove('active');
+    }
+  });
+});
+
+
+  // js Cards
+const cards = document.querySelectorAll(".card");
+const videoPlayers = document.querySelectorAll(".video-player2");
+const closeButtons = document.querySelectorAll(".close-button2");
+
+// Loop através de todos os elementos com a classe "card"
+for (let i = 0; i < cards.length; i++) {
+  const card = cards[i];
+  const videoPlayer = videoPlayers[i];
+  const closeButton = closeButtons[i];
+
+  // Definir o volume do vídeo para 30% no momento da reprodução
+  videoPlayer.querySelector("video").volume = 0.3;
+
+  card.addEventListener("click", function() {
+    videoPlayer.style.display = "flex";
+    videoPlayer.style.position = "fixed";
+    videoPlayer.style.top = "50%";
+    videoPlayer.style.left = "50%";
+    videoPlayer.style.transform = "translate(-50%, -50%)";
+  });
+
+  closeButton.addEventListener("click", function() {
+    videoPlayer.style.display = "none";
+    videoPlayer.querySelector("video").pause();
+    videoPlayer.querySelector("video").currentTime = 0;
+    videoPlayer.querySelector("video").autoplay = false;
+    videoPlayer.querySelector("video").volume = 0;
+  });
+
+  document.addEventListener("click", function(event) {
+    if (event.target === videoPlayer) {
+      videoPlayer.style.display = "none";
+      videoPlayer.querySelector("video").pause();
+      videoPlayer.querySelector("video").currentTime = 0;
+      videoPlayer.querySelector("video").autoplay = false;
+      videoPlayer.querySelector("video").volume = 0;
+    }
+  });
+}
+function scrollToDiv() {
+  document.querySelector('#secundary').scrollIntoView({
+    behavior: 'smooth'
+  });
+}
+</script>
+</html>
