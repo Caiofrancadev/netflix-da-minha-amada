@@ -156,26 +156,17 @@ const video = videoPlayer.querySelector("video");
 playButton.addEventListener("click", function() {
   videoPlayer.style.display = "block";
   video.play();
-
-  if (video.requestFullscreen && window.innerWidth < 768 && window.orientation === 90) {
-    video.requestFullscreen();
-  } else if (video.webkitRequestFullscreen && window.innerWidth < 768 && window.orientation === 90) {
-    video.webkitRequestFullscreen();
-  } else if (video.msRequestFullscreen && window.innerWidth < 768 && window.orientation === 90) {
-    video.msRequestFullscreen();
-  }
-});
-
-playButton.addEventListener("touchstart", function() {
-  videoPlayer.style.display = "block";
-  video.play();
-
-  if (video.requestFullscreen && window.innerWidth < 768 && window.orientation === 90) {
-    video.requestFullscreen();
-  } else if (video.webkitRequestFullscreen && window.innerWidth < 768 && window.orientation === 90) {
-    video.webkitRequestFullscreen();
-  } else if (video.msRequestFullscreen && window.innerWidth < 768 && window.orientation === 90) {
-    video.msRequestFullscreen();
+  
+  if (window.innerWidth < 500 && window.innerHeight < 500) {
+    if (video.requestFullscreen) {
+      video.requestFullscreen();
+    } else if (video.mozRequestFullScreen) { // para Firefox
+      video.mozRequestFullScreen();
+    } else if (video.webkitRequestFullscreen) { // para Chrome, Safari e Opera
+      video.webkitRequestFullscreen();
+    } else if (video.msRequestFullscreen) { // para IE/Edge
+      video.msRequestFullscreen();
+    }
   }
 });
 
@@ -184,6 +175,7 @@ closeButton.addEventListener("click", function() {
   video.pause();
   video.currentTime = 0;
 });
+
 
  
     // menu drop 
