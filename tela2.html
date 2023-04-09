@@ -154,10 +154,10 @@ const closeButton = document.querySelector(".close-button");
 const video = videoPlayer.querySelector("video");
 
 playButton.addEventListener("click", function() {
-  videoPlayer.style.display = "block";
-  video.play();
-  
-  if (window.innerWidth < 500 && window.innerHeight < 500) {
+  // Verificar a largura da tela
+  const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+  if (screenWidth <= 500) {
+    // Solicitar tela cheia em modo paisagem
     if (video.requestFullscreen) {
       video.requestFullscreen();
     } else if (video.mozRequestFullScreen) { // para Firefox
@@ -168,6 +168,9 @@ playButton.addEventListener("click", function() {
       video.msRequestFullscreen();
     }
   }
+  
+  videoPlayer.style.display = "block";
+  video.play();
 });
 
 closeButton.addEventListener("click", function() {
