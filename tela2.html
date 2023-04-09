@@ -179,6 +179,15 @@ closeButton.addEventListener("click", function() {
   video.currentTime = 0;
 });
 
+// Detectar saída do modo tela cheia
+document.addEventListener('fullscreenchange', function() {
+  if (!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
+    videoPlayer.style.display = "none";
+    video.pause();
+    video.currentTime = 0;
+  }
+});
+
 
  
     // menu drop 
